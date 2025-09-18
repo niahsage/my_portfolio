@@ -88,6 +88,16 @@ nav a, nav button {
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(255, 193, 203, 0.3);
 }
+.recent-image {
+  width: 60%;
+  max-width: 400px;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 193, 203, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .project-grid {
   display: flex;
