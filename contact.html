@@ -25,6 +25,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="webprojects.html">Web Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><button id="themeToggle">🌓</button></li>
     </ul>
@@ -34,12 +35,14 @@
 <main>
   <section id="contact">
     <h2>📩 Reach Out</h2>
-    <form id="contactForm" novalidate>
-      <input type="text" id="name" placeholder="Name" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <textarea id="message" placeholder="Message"></textarea>
-      <button type="submit">Send 💖</button>
-    </form>
+   <form id="contactForm" action="https://formspree.io/f/mjkenvya" method="POST">
+  <input type="text" id="name" name="name" placeholder="Name" required />
+  <input type="email" id="email" name="email" placeholder="Email" required />
+  <textarea id="message" name="message" placeholder="Message"></textarea>
+  <button type="submit">Send 💖</button>
+</form>
+
+
     <div class="contact-links">
       <p><a href="mailto:niahsage@gmail.com">📧 niahsage@gmail.com</a></p>
       <p><a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank">🔗 LinkedIn</a></p>

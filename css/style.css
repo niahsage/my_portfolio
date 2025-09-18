@@ -131,6 +131,100 @@ nav a, nav button {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(255, 175, 175, 0.4);
 }
+/* ===== Web Projects Styling - match pastel cute theme ===== */
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.project {
+  background: var(--card-bg);       /* pastel card background */
+  border-radius: 16px;              /* rounded corners */
+  padding: 1rem;
+  flex: 1 1 300px;
+  border: 2px dashed var(--accent); /* fun accent border */
+  box-shadow: 0 4px 12px rgba(255, 175, 175, 0.3); /* soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 6px 20px rgba(255, 175, 175, 0.5);
+}
+
+.project img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(255, 175, 175, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.project img:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.project p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.project p a {
+  font-family: 'Rock Salt', cursive;  /* matches your handwritten headings */
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.project p a:hover {
+  color: var(--accent);
+}
+
+/* Lightbox captions and buttons match site colors */
+.lb-caption {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text);
+}
+
+.lb-prev, .lb-next {
+  color: var(--accent) !important;
+}
+
+/* Make header nav consistent with site style */
+header nav {
+  text-align: center;
+  padding: 1rem;
+}
+
+header nav a {
+  background-color: var(--highlight);
+  color: white;
+  border-radius: 30px;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+}
+
+header nav a:hover {
+  background-color: var(--accent);
+}
+
+/* Page heading style */
+h2 {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 form input, form textarea {
   width: 100%;

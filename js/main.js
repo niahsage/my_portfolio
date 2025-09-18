@@ -18,14 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggle) {
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
-      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+      );
     });
   }
 
   const form = document.getElementById("contactForm");
   if (form) {
-    form.addEventListener("submit", e => {
+    form.addEventListener("submit", async e => {
       e.preventDefault();
+
       const name = document.getElementById("name");
       const email = document.getElementById("email");
 
@@ -34,15 +38,32 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const msg = document.createElement("div");
-      msg.className = "sent-message";
-      msg.textContent = "💌 Message sent! I’ll get back to you soon.";
-      form.appendChild(msg);
+      const data = new FormData(form);
 
-      setTimeout(() => {
-        msg.remove();
-        form.reset();
-      }, 4000);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          const msg = document.createElement("div");
+          msg.className = "sent-message";
+          msg.textContent = "💌 Message sent! I’ll get back to you soon.";
+          form.appendChild(msg);
+
+          setTimeout(() => {
+            msg.remove();
+            form.reset();
+          }, 4000);
+        } else {
+          alert("Oops! There was a problem sending your message.");
+        }
+      } catch (err) {
+        alert("Oops! There was a problem sending your message.");
+        console.error(err);
+      }
     });
   }
-});
+}); 
