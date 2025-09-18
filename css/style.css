@@ -1,0 +1,180 @@
+/*
+  style.css
+  This stylesheet defines the pastel orange theme, handwritten typography,
+  layout, and transitions used throughout the site.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Quicksand:wght@400;600&display=swap');
+
+:root {
+  --bg: #fffdf7;
+  --text: #3a2e2e;
+  --accent: #ffd5a5;
+  --highlight: #ffc8a2;
+  --card-bg: #fff0e5;
+  --green: #d4edda;
+  --yellow: #fff9c4;
+  --red: #f8d7da;
+}
+
+body.dark {
+  --bg: #2e1b2c;
+  --text: #fce4ec;
+  --accent: #ce93d8;
+  --highlight: #ba68c8;
+  --card-bg: #3f2c3b;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+h1, h2 {
+  font-family: 'Rock Salt', cursive;
+}
+
+header {
+  background: var(--accent);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 5px dotted var(--highlight);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a, nav button {
+  background-color: var(--highlight);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-image {
+  width: 80%;
+  max-width: 650px;
+  margin: 3rem auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 193, 203, 0.3);
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.project {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  flex: 1 1 300px;
+  border: 2px dashed var(--accent);
+  transition: transform 0.3s ease;
+}
+.portfolio-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+
+.project:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-image img {
+  max-width: 20%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 175, 175, 0.4);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--highlight);
+  border-radius: 10px;
+  background: #fffefc;
+}
+
+form button {
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sent-message {
+  background: var(--green);
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 1rem;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.contact-links {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+.contact-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.contact-links a:hover {
+  text-decoration: underline;
+}

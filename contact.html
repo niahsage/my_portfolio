@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  contact.html
+  Contains a form for visitors to send messages, along with links to email
+  and LinkedIn. Includes animated "message sent" feedback.
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Niah Mckyton</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="preloader"><div class="loader-heart"></div>
+
+<header>
+  <h1>Niah Mckyton</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="themeToggle">🌓</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="contact">
+    <h2>📩 Reach Out</h2>
+    <form id="contactForm" novalidate>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <textarea id="message" placeholder="Message"></textarea>
+      <button type="submit">Send 💖</button>
+    </form>
+    <div class="contact-links">
+      <p><a href="mailto:niahsage@gmail.com">📧 niahsage@gmail.com</a></p>
+      <p><a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank">🔗 LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Niah Mckyton 🌷</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
