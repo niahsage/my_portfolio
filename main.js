@@ -34,8 +34,7 @@ const lbImg = document.getElementById("lbImg");
 
 document.querySelectorAll(".tile").forEach(tile => {
   tile.addEventListener("click", (e) => {
-
-    // 🚫 If clicking the Astrolove "View site" link, do NOT open the lightbox
+    // Don't open lightbox when clicking "View site" on Astrolove
     if (e.target.closest(".cap-link")) return;
 
     lbImg.src = tile.getAttribute("data-full");
@@ -53,3 +52,36 @@ lightbox.addEventListener("click", (e) => {
     e.clientY <= r.bottom;
   if (!within) lightbox.close();
 });
+
+// Contact form with Formspree (AJAX submit + inline status)
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  const status = document.getElementById("formStatus");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop normal redirect
+
+    status.textContent = "Sending…";
+
+    const data = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        status.textContent = "Thank you! Your message was sent 💛";
+        contactForm.reset();
+      } else {
+        status.textContent =
+          "Hmm, something went wrong. Please try again or email me directly.";
+      }
+    } catch (err) {
+      status.textContent =
+        "Network error. Please try again or email me directly.";
+    }
+  });
+}
