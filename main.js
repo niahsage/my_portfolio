@@ -46,11 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------
-     Lightbox open
+     Lightbox open / close
   ------------------------------ */
   const lightbox = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
   const lbClose = document.getElementById("lbClose");
+
+  // we’ll store the scroll position before opening
+  let lastScrollY = 0;
+
+  function restoreScroll() {
+    window.scrollTo(0, lastScrollY);
+  }
 
   if (lightbox && lbImg) {
     document.querySelectorAll(".tile").forEach(tile => {
@@ -60,12 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const fullSrc = tile.getAttribute("data-full");
         if (!fullSrc) return;
+
+        // remember where the user is
+        lastScrollY = window.scrollY;
+
         lbImg.src = fullSrc;
         lightbox.showModal();
       });
     });
 
-    // Close when clicking outside dialog box
+    // click outside dialog to close
     lightbox.addEventListener("click", (e) => {
       const rect = lightbox.getBoundingClientRect();
       const inside =
@@ -73,14 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
         e.clientX <= rect.right &&
         e.clientY >= rect.top &&
         e.clientY <= rect.bottom;
-      if (!inside) lightbox.close();
+      if (!inside) {
+        lightbox.close();
+        restoreScroll();
+      }
     });
   }
 
-  // Close button (no scroll jump)
+  // Close button
   if (lbClose && lightbox) {
     lbClose.addEventListener("click", () => {
       lightbox.close();
+      restoreScroll();
     });
   }
 
