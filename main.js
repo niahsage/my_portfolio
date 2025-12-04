@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------------------
-     Update footer year
+     Footer year
   ------------------------------ */
   const yrEl = document.getElementById("yr");
   if (yrEl) yrEl.textContent = new Date().getFullYear();
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------
-     Smooth scroll with header offset
+     Smooth scroll (header offset)
   ------------------------------ */
   const header = document.querySelector("header");
   const headerH = () => (header ? header.getBoundingClientRect().height : 0);
@@ -46,15 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------
-     Lightbox (open)
+     Lightbox open
   ------------------------------ */
   const lightbox = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
+  const lbClose = document.getElementById("lbClose");
 
   if (lightbox && lbImg) {
     document.querySelectorAll(".tile").forEach(tile => {
       tile.addEventListener("click", (e) => {
-        // Do NOT open lightbox if clicking the Astrolove "View site" link
+        // Don't open lightbox when clicking Astrolove "View site"
         if (e.target.closest(".cap-link")) return;
 
         const fullSrc = tile.getAttribute("data-full");
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close if clicking outside modal content
+    // Close when clicking outside dialog box
     lightbox.addEventListener("click", (e) => {
       const rect = lightbox.getBoundingClientRect();
       const inside =
@@ -76,30 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
-  /* ------------------------------
-     Lightbox (close button fix)
-     Prevent page from jumping to top
-  ------------------------------ */
-  const lbForm = document.querySelector("#lightbox form");
-  if (lbForm && lightbox) {
-    lbForm.addEventListener("submit", (e) => {
-      e.preventDefault();     // prevent jump
-      lightbox.close();       // clean close
+  // Close button (no scroll jump)
+  if (lbClose && lightbox) {
+    lbClose.addEventListener("click", () => {
+      lightbox.close();
     });
   }
 
 
   /* ------------------------------
-     Contact Form — Formspree AJAX
-     No redirect, inline success message
+     Contact form — Formspree AJAX
   ------------------------------ */
   const contactForm = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
 
   if (contactForm && status) {
     contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault(); // stop Formspree redirect
+      e.preventDefault(); // stop redirect to Formspree "thanks" page
 
       status.textContent = "Sending…";
 
