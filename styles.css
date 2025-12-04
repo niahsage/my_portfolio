@@ -284,26 +284,55 @@ footer{
   text-align:center;
 }
 
-dialog#lightbox{
-  border:none;
-  padding:0;
-  background:rgba(0,0,0,.8);
+/* Lightbox */
+#lightbox {
+  padding: 0;
+  border: none;
+  background: rgba(0,0,0,0.8);
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  position: relative;
+  border-radius: 12px;
 }
 
-#lightbox img{
-  max-width:90vw;
-  max-height:80vh;
-  display:block;
-  margin:40px auto;
-  border-radius:12px;
-  box-shadow:0 20px 60px rgba(0,0,0,.4);
+#lightbox img {
+  max-width: 85vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
 }
 
-#lightbox form{
-  display:flex;
-  justify-content:center;
-  margin-bottom:24px;
+/* NEW CLOSE BUTTON STYLE */
+#lightbox form {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
+
+#lightbox button {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#lightbox button:hover {
+  background: white;
+  transform: scale(1.06);
+}
+
+#lightbox button:active {
+  transform: scale(0.98);
+}
+
 
 /* Responsive */
 
