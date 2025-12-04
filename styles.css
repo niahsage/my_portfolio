@@ -10,6 +10,7 @@
   --radius:18px;
 }
 
+/* RESET + GLOBAL */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 
@@ -29,6 +30,7 @@ img{max-width:100%;display:block}
   padding:24px;
 }
 
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -76,6 +78,7 @@ a{
   font-size:20px;
 }
 
+/* HERO */
 .hero{
   padding:70px 20px 40px;
 }
@@ -114,6 +117,7 @@ h2{
   box-shadow:var(--shadow);
 }
 
+/* BUTTONS */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -139,6 +143,7 @@ h2{
   margin-top:10px;
 }
 
+/* SECTIONS */
 section{
   padding:36px 20px;
   margin-bottom:230px;
@@ -149,6 +154,7 @@ section{
 #work{margin-bottom:160px;}
 #contact{margin-bottom:120px;}
 
+/* ABOUT SECTION */
 .about{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -195,6 +201,7 @@ section{
   font-weight:600;
 }
 
+/* WORK GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -220,7 +227,7 @@ section{
   display:block;
 }
 
-/* Caption for tiles, with Astrolove link space */
+/* Project captions */
 .cap{
   position:absolute;
   left:10px;
@@ -250,6 +257,7 @@ section{
   margin-top:24px;
 }
 
+/* CONTACT FORM */
 form{
   display:grid;
   gap:12px;
@@ -271,24 +279,32 @@ textarea{
   font-size:14px;
 }
 
-/* inline status under contact form */
 .form-status{
   margin-top:0.75rem;
   font-size:0.9rem;
   color:var(--muted);
 }
 
+/* FOOTER */
 footer{
   padding:30px 20px;
   color:var(--muted);
   text-align:center;
 }
 
-/* Lightbox */
-#lightbox {
-  padding: 0;
+/* LIGHTBOX — CLEAN, UPDATED, FIXED VERSION */
+dialog#lightbox {
   border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+dialog#lightbox::backdrop {
   background: rgba(0,0,0,0.8);
+}
+
+#lightbox {
   max-width: 90vw;
   max-height: 90vh;
   margin: auto;
@@ -304,38 +320,36 @@ footer{
   margin: auto;
 }
 
-/* NEW CLOSE BUTTON STYLE */
 #lightbox form {
   position: absolute;
   top: 12px;
   right: 12px;
+  margin: 0;
 }
 
 #lightbox button {
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  border-radius: 50px;
+  background: rgba(255,255,255,0.97);
+  color: #111827;
+  border-radius: 999px;
   border: none;
   padding: 10px 18px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  transition: transform .18s ease, background .18s ease;
 }
 
 #lightbox button:hover {
-  background: white;
-  transform: scale(1.06);
+  background:#fff;
+  transform:scale(1.05);
 }
 
 #lightbox button:active {
-  transform: scale(0.98);
+  transform:scale(0.96);
 }
 
-
-/* Responsive */
-
+/* RESPONSIVE */
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr}
   .about{grid-template-columns:1fr}
