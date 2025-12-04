@@ -220,6 +220,7 @@ section{
   display:block;
 }
 
+/* Caption for tiles, with Astrolove link space */
 .cap{
   position:absolute;
   left:10px;
@@ -243,7 +244,6 @@ section{
   text-decoration:underline;
   white-space:nowrap;
 }
-
 
 .view-all{
   text-align:center;
@@ -269,6 +269,13 @@ textarea{
   color:var(--ink);
   font-family:inherit;
   font-size:14px;
+}
+
+/* inline status under contact form */
+.form-status{
+  margin-top:0.75rem;
+  font-size:0.9rem;
+  color:var(--muted);
 }
 
 footer{
