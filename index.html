@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niah Mckyton – Portfolio</title>
+  <meta name="description" content="DIG3174C final project portfolio by Niah Mckyton." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="card">
+    <nav class="nav container">
+      <a class="badge brandmark" href="#top" aria-label="Home">Niah • Portfolio</a>
+      <div class="links" role="navigation" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="toggle" id="modeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Hi, I’m <span class="brandmark">Niah</span><br/>Designer & Web Creative</h1>
+          <p class="lede">
+            This site showcases a few favorite pieces across posters, packaging, photo edits, and web projects.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#work">See Work</a>
+            <a class="btn" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/hero.jpg" alt="Featured painting" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="sub">A bit about me and what I create.</p>
+      <div class="about">
+        <div class="bio card">
+          <div class="bio-inner">
+            <img src="assets/headshot.jpg" alt="Portrait of Niah Mckyton" class="headshot">
+            <div>
+              <p>
+                I’m a UCF Digital Media (Web & Interactive Media) major with a Marketing minor. I love pastel palettes,
+                playful type, and clean, accessible code. Outside of class I create social graphics and short-form pet
+                content for a local pet boarding/daycare.
+              </p>
+              <ul>
+                <li>Tools: Figma, Illustrator, Photoshop, Procreate, VS Code</li>
+                <li>Web: HTML, CSS, a dash of JavaScript</li>
+                <li>Interests: posters, packaging, motion snippets, and UI design</li>
+              </ul>
+              <div class="bio-actions">
+                <a class="btn" href="assets/NiahSageResume.pdf" download>Download Résumé</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b>12+</b> projects</div>
+          <div class="kpi"><b>4</b> focus areas</div>
+          <div class="kpi"><b>2027</b> grad goal</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected Work</h2>
+      <p class="sub">
+        A mix of design, art, and web projects that reflect my creative process. Click any tile to zoom.
+      </p>
+
+      <div class="grid" id="gallery">
+<figure class="tile" data-full="assets/datingapp.jpg">
+  <img class="ph" src="assets/datingapp.jpg" alt="Astrolove UI" />
+  <figcaption class="cap">
+    <span>Astrolove — UX/UI</span>
+    <a
+      href="https://niahsage.github.io/astrolove/"
+      target="_blank"
+      rel="noopener"
+      class="cap-link"
+    >
+      View site ↗
+    </a>
+  </figcaption>
+</figure>
+
+        <figure class="tile" data-full="assets/project5.jpg">
+          <img class="ph" src="assets/project5.jpg" alt="Vinyl packaging mockups" />
+          <figcaption class="cap">Vinyl Packaging — The Flat Stanleys</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/project8.jpg">
+          <img class="ph" src="assets/project8.jpg" alt="Grimm book cover" />
+          <figcaption class="cap">Book Cover — Grimm Stories</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/project7.jpg">
+          <img class="ph" src="assets/project7.jpg" alt="Structure and business cards" />
+          <figcaption class="cap">6ft Structure & Business Cards</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/project9.png">
+          <img class="ph" src="assets/project9.png" alt="Birdhouse process board" />
+          <figcaption class="cap">Birdhouse — Concept to Model</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/wicked.jpg">
+          <img class="ph" src="assets/wicked.jpg" alt="Wicked character cards" />
+          <figcaption class="cap">Wicked — Character Cards</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/project10.png">
+          <img class="ph" src="assets/project10.png" alt="Sticker commission" />
+          <figcaption class="cap">Sticker Commission — Illustration</figcaption>
+        </figure>
+
+        <figure class="tile" data-full="assets/hero.jpg">
+          <img class="ph" src="assets/hero.jpg" alt="Oil painting" />
+          <figcaption class="cap">Oil Painting — Evening Still</figcaption>
+        </figure>
+      </div>
+
+      <div class="view-all">
+        <a class="btn primary" href="allwork.html">View All Recent Work</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Let’s collaborate or chat about design!</p>
+      <!-- Uses mailto: so it actually works on GitHub Pages without extra setup -->
+      <form class="card" action="mailto:niahsage@gmail.com" method="POST" enctype="text/plain">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+        </div>
+        <div class="cta-row">
+          <button class="btn primary" type="submit">Send</button>
+          <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/niah-mckyton0727" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="yr"></span> Niah Mckyton • <a href="#top">Back to top</a></small>
+  </footer>
+
+  <dialog id="lightbox">
+    <img id="lbImg" alt="Expanded work" />
+    <form method="dialog">
+      <button class="btn" value="close">Close</button>
+    </form>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
