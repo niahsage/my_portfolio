@@ -26,6 +26,7 @@
   </header>
 
   <main id="top" class="container">
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap">
         <div>
@@ -44,6 +45,7 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
       <p class="sub">A bit about me and what I create.</p>
@@ -76,6 +78,7 @@
       </div>
     </section>
 
+    <!-- WORK -->
     <section id="work">
       <h2>Selected Work</h2>
       <p class="sub">
@@ -83,20 +86,21 @@
       </p>
 
       <div class="grid" id="gallery">
-<figure class="tile" data-full="assets/datingapp.jpg">
-  <img class="ph" src="assets/datingapp.jpg" alt="Astrolove UI" />
-  <figcaption class="cap">
-    <span>Astrolove — UX/UI</span>
-    <a
-      href="https://niahsage.github.io/astrolove/"
-      target="_blank"
-      rel="noopener"
-      class="cap-link"
-    >
-      View site ↗
-    </a>
-  </figcaption>
-</figure>
+        <!-- Astrolove tile with external link -->
+        <figure class="tile" data-full="assets/datingapp.jpg">
+          <img class="ph" src="assets/datingapp.jpg" alt="Astrolove UI" />
+          <figcaption class="cap">
+            <span>Astrolove — UX/UI</span>
+            <a
+              href="https://niahsage.github.io/astrolove/"
+              target="_blank"
+              rel="noopener"
+              class="cap-link"
+            >
+              View site ↗
+            </a>
+          </figcaption>
+        </figure>
 
         <figure class="tile" data-full="assets/project5.jpg">
           <img class="ph" src="assets/project5.jpg" alt="Vinyl packaging mockups" />
@@ -139,51 +143,52 @@
       </div>
     </section>
 
-   <section id="contact">
-  <h2>Contact</h2>
-  <p class="sub">Let’s collaborate or chat about design!</p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Let’s collaborate or chat about design!</p>
 
-  <!-- FORMSPREE VERSION -->
- <form
-  class="card"
-  action="https://formspree.io/f/mjknowzq"
-  method="POST"
->
-  <div>
-    <label for="name">Name</label>
-    <input id="name" name="name" required placeholder="Your name" />
-  </div>
-  <div>
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required placeholder="you@example.com" />
-  </div>
-  <div>
-    <label for="msg">Message</label>
-    <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
-  </div>
+      <form
+        class="card"
+        id="contactForm"
+        action="https://formspree.io/f/mjknowzq"
+        method="POST"
+      >
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+        </div>
 
-  <!-- subject for the email -->
-  <input type="hidden" name="_subject" value="New message from portfolio contact form" />
-  <!-- ✅ custom redirect after submit -->
-  <input type="hidden" name="_redirect" value="https://niahsage.github.io/my_portfolio/thankyou.html" />
+        <!-- subject line for Formspree email -->
+        <input type="hidden" name="_subject" value="New message from portfolio contact form" />
 
-  <div class="cta-row">
-    <button class="btn primary" type="submit">Send</button>
-    <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
-    <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
-      LinkedIn
-    </a>
-  </div>
-</form>
+        <div class="cta-row">
+          <button class="btn primary" type="submit">Send</button>
+          <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
 
-</section>
-
+        <!-- inline success / error message -->
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <footer class="container">
     <small>© <span id="yr"></span> Niah Mckyton • <a href="#top">Back to top</a></small>
   </footer>
 
+  <!-- Lightbox dialog -->
   <dialog id="lightbox">
     <img id="lbImg" alt="Expanded work" />
     <form method="dialog">
