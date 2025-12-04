@@ -292,7 +292,7 @@ footer{
   text-align:center;
 }
 
-/* LIGHTBOX — CLEAN, UPDATED, FIXED VERSION */
+/* LIGHTBOX — dialog overlay */
 dialog#lightbox {
   border: none;
   padding: 0;
@@ -304,6 +304,7 @@ dialog#lightbox::backdrop {
   background: rgba(0,0,0,0.8);
 }
 
+/* Inner container */
 #lightbox {
   max-width: 90vw;
   max-height: 90vh;
@@ -320,14 +321,11 @@ dialog#lightbox::backdrop {
   margin: auto;
 }
 
-#lightbox form {
+/* Floating close button */
+#lbClose {
   position: absolute;
   top: 12px;
   right: 12px;
-  margin: 0;
-}
-
-#lightbox button {
   background: rgba(255,255,255,0.97);
   color: #111827;
   border-radius: 999px;
@@ -340,14 +338,15 @@ dialog#lightbox::backdrop {
   transition: transform .18s ease, background .18s ease;
 }
 
-#lightbox button:hover {
+#lbClose:hover {
   background:#fff;
   transform:scale(1.05);
 }
 
-#lightbox button:active {
+#lbClose:active {
   transform:scale(0.96);
 }
+
 
 /* RESPONSIVE */
 @media (max-width:900px){
