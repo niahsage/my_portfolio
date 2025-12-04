@@ -144,44 +144,43 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="sub">Let’s collaborate or chat about design!</p>
+   <section id="contact">
+  <h2>Contact</h2>
+  <p class="sub">Let’s collaborate or chat about design!</p>
 
-      <form
-        class="card"
-        id="contactForm"
-        action="https://formspree.io/f/mjknowzq"
-        method="POST"
-      >
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" required placeholder="Your name" />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
-        </div>
-        <div>
-          <label for="msg">Message</label>
-          <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
-        </div>
+  <form
+    class="card"
+    id="contactForm"
+    action="https://formspree.io/f/mjknowzq"
+    method="POST"
+  >
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="name" required placeholder="Your name" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" />
+    </div>
+    <div>
+      <label for="msg">Message</label>
+      <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+    </div>
 
-        <!-- subject line for Formspree email -->
-        <input type="hidden" name="_subject" value="New message from portfolio contact form" />
+    <input type="hidden" name="_subject" value="New message from portfolio contact form" />
 
-        <div class="cta-row">
-          <button class="btn primary" type="submit">Send</button>
-          <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
-          <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-        </div>
+    <div class="cta-row">
+      <button class="btn primary" type="submit">Send</button>
+      <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
 
-        <!-- inline success / error message -->
-        <p id="formStatus" class="form-status" aria-live="polite"></p>
-      </form>
-    </section>
+    <p id="formStatus" class="form-status" aria-live="polite"></p>
+  </form>
+</section>
+
   </main>
 
   <footer class="container">
