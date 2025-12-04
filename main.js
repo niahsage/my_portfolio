@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Footer year
+
+  /* ------------------------------
+     Update footer year
+  ------------------------------ */
   const yrEl = document.getElementById("yr");
   if (yrEl) yrEl.textContent = new Date().getFullYear();
 
-  // Dark mode toggle
+
+  /* ------------------------------
+     Dark mode toggle
+  ------------------------------ */
   const modeBtn = document.getElementById("modeBtn");
   let dark = false;
+
   if (modeBtn) {
     modeBtn.addEventListener("click", () => {
       dark = !dark;
@@ -17,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth scroll offset for sticky header
+
+  /* ------------------------------
+     Smooth scroll with header offset
+  ------------------------------ */
   const header = document.querySelector("header");
   const headerH = () => (header ? header.getBoundingClientRect().height : 0);
 
@@ -27,20 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!id || id.length < 2) return;
       const el = document.querySelector(id);
       if (!el) return;
+
       e.preventDefault();
       const top = el.getBoundingClientRect().top + window.scrollY - headerH() - 12;
       window.scrollTo({ top, behavior: "smooth" });
     });
   });
 
-  // Lightbox system
+
+  /* ------------------------------
+     Lightbox (open)
+  ------------------------------ */
   const lightbox = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
 
   if (lightbox && lbImg) {
     document.querySelectorAll(".tile").forEach(tile => {
       tile.addEventListener("click", (e) => {
-        // Don't open lightbox when clicking "View site" on Astrolove
+        // Do NOT open lightbox if clicking the Astrolove "View site" link
         if (e.target.closest(".cap-link")) return;
 
         const fullSrc = tile.getAttribute("data-full");
@@ -50,25 +64,42 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close lightbox when clicking outside the image
+    // Close if clicking outside modal content
     lightbox.addEventListener("click", (e) => {
-      const r = lightbox.getBoundingClientRect();
-      const within =
-        e.clientX >= r.left &&
-        e.clientX <= r.right &&
-        e.clientY >= r.top &&
-        e.clientY <= r.bottom;
-      if (!within) lightbox.close();
+      const rect = lightbox.getBoundingClientRect();
+      const inside =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if (!inside) lightbox.close();
     });
   }
 
-  // Contact form with Formspree (AJAX submit + inline status)
+
+  /* ------------------------------
+     Lightbox (close button fix)
+     Prevent page from jumping to top
+  ------------------------------ */
+  const lbForm = document.querySelector("#lightbox form");
+  if (lbForm && lightbox) {
+    lbForm.addEventListener("submit", (e) => {
+      e.preventDefault();     // prevent jump
+      lightbox.close();       // clean close
+    });
+  }
+
+
+  /* ------------------------------
+     Contact Form — Formspree AJAX
+     No redirect, inline success message
+  ------------------------------ */
   const contactForm = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
 
   if (contactForm && status) {
     contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault(); // 🚫 stop normal redirect to Formspree page
+      e.preventDefault(); // stop Formspree redirect
 
       status.textContent = "Sending…";
 
@@ -86,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
           contactForm.reset();
         } else {
           status.textContent =
-            "Hmm, something went wrong. Please try again or email me directly.";
+            "Something went wrong. Please try again or email me directly.";
         }
       } catch (err) {
         status.textContent =
@@ -94,4 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
 });
