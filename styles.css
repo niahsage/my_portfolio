@@ -292,7 +292,7 @@ footer{
   text-align:center;
 }
 
-/* LIGHTBOX OVERLAY (no scroll jump, no dialog) */
+/* LIGHTBOX OVERLAY (no dialog, no scroll jump) */
 #lightboxOverlay {
   position: fixed;
   inset: 0;
@@ -347,7 +347,6 @@ footer{
 #lbClose:active {
   transform:scale(0.96);
 }
-
 
 /* RESPONSIVE */
 @media (max-width:900px){
