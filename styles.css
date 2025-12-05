@@ -292,36 +292,37 @@ footer{
   text-align:center;
 }
 
-/* LIGHTBOX — dialog overlay */
-dialog#lightbox {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-}
-
-dialog#lightbox::backdrop {
+/* LIGHTBOX OVERLAY (no scroll jump, no dialog) */
+#lightboxOverlay {
+  position: fixed;
+  inset: 0;
   background: rgba(0,0,0,0.8);
+  display: none;              /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
-/* Inner container */
-#lightbox {
+#lightboxOverlay.open {
+  display: flex;
+}
+
+#lightboxOverlay .lb-inner {
+  position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  margin: auto;
-  position: relative;
   border-radius: 12px;
+  overflow: hidden;
 }
 
-#lightbox img {
-  max-width: 85vw;
-  max-height: 80vh;
-  border-radius: 12px;
+#lightboxOverlay img {
+  max-width: 90vw;
+  max-height: 90vh;
   display: block;
-  margin: auto;
+  border-radius: 12px;
 }
 
-/* Floating close button */
+/* Close button */
 #lbClose {
   position: absolute;
   top: 12px;
