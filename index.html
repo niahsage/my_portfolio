@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Niah Mckyton – Portfolio</title>
-  <meta name="description" content="DIG3174C final project portfolio by Niah Mckyton." />
+  <meta name="description" content="Portfolio of Niah Mckyton – web & interactive media student and designer." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Rock+Salt&display=swap"
@@ -86,7 +86,8 @@
       </p>
 
       <div class="grid" id="gallery">
-        <!-- Astrolove tile with external link -->
+
+        <!-- Astrolove – with link + zoom on rest of card -->
         <figure class="tile" data-full="assets/datingapp.jpg">
           <img class="ph" src="assets/datingapp.jpg" alt="Astrolove UI" />
           <figcaption class="cap">
@@ -114,7 +115,7 @@
 
         <figure class="tile" data-full="assets/project7.jpg">
           <img class="ph" src="assets/project7.jpg" alt="Structure and business cards" />
-          <figcaption class="cap">6ft Structure & Business Cards</figcaption>
+          <figcaption class="cap">6ft Structure &amp; Business Cards</figcaption>
         </figure>
 
         <figure class="tile" data-full="assets/project9.png">
@@ -122,11 +123,21 @@
           <figcaption class="cap">Birdhouse — Concept to Model</figcaption>
         </figure>
 
+        <figure class="tile" data-full="assets/wicked.jpg">
+          <img class="ph" src="assets/wicked.jpg" alt="Wicked character cards" />
+          <figcaption class="cap">Wicked — Character Cards</figcaption>
+        </figure>
+
         <figure class="tile" data-full="assets/project10.png">
           <img class="ph" src="assets/project10.png" alt="Sticker commission" />
           <figcaption class="cap">Sticker Commission — Illustration</figcaption>
         </figure>
 
+        <figure class="tile" data-full="assets/hero.jpg">
+          <img class="ph" src="assets/hero.jpg" alt="Oil painting" />
+          <figcaption class="cap">Oil Painting — Evening Still</figcaption>
+        </figure>
+      </div>
 
       <div class="view-all">
         <a class="btn primary" href="allwork.html">View All Recent Work</a>
@@ -134,57 +145,56 @@
     </section>
 
     <!-- CONTACT -->
-   <section id="contact">
-  <h2>Contact</h2>
-  <p class="sub">Let’s collaborate or chat about design!</p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Let’s collaborate or chat about design!</p>
 
-  <form
-    class="card"
-    id="contactForm"
-    action="https://formspree.io/f/mjknowzq"
-    method="POST"
-  >
-    <div>
-      <label for="name">Name</label>
-      <input id="name" name="name" required placeholder="Your name" />
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required placeholder="you@example.com" />
-    </div>
-    <div>
-      <label for="msg">Message</label>
-      <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
-    </div>
+      <form
+        class="card"
+        id="contactForm"
+        action="https://formspree.io/f/mjknowzq"
+        method="POST"
+      >
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+        </div>
 
-    <input type="hidden" name="_subject" value="New message from portfolio contact form" />
+        <input type="hidden" name="_subject" value="New message from portfolio contact form" />
 
-    <div class="cta-row">
-      <button class="btn primary" type="submit">Send</button>
-      <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
-      <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
-        LinkedIn
-      </a>
-    </div>
+        <div class="cta-row">
+          <button class="btn primary" type="submit">Send</button>
+          <a class="btn" href="mailto:niahsage@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/niah-mckyton-83ba372a5" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
 
-    <p id="formStatus" class="form-status" aria-live="polite"></p>
-  </form>
-</section>
-
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <footer class="container">
     <small>© <span id="yr"></span> Niah Mckyton • <a href="#top">Back to top</a></small>
   </footer>
 
-  <!-- Lightbox dialog -->
-<div id="lightboxOverlay" aria-hidden="true">
-  <div class="lb-inner">
-    <button id="lbClose" type="button">Close</button>
-    <img id="lbImg" alt="Expanded work" />
+  <!-- LIGHTBOX OVERLAY (no dialog element) -->
+  <div id="lightboxOverlay" aria-hidden="true">
+    <div class="lb-inner">
+      <button id="lbClose" type="button">Close</button>
+      <img id="lbImg" alt="Expanded work" />
+    </div>
   </div>
-</div>
 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
