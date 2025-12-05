@@ -46,56 +46,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------
-     Lightbox open / close
+     Lightbox overlay (no dialog)
   ------------------------------ */
-  const lightbox = document.getElementById("lightbox");
+  const overlay = document.getElementById("lightboxOverlay");
   const lbImg = document.getElementById("lbImg");
   const lbClose = document.getElementById("lbClose");
 
-  // we’ll store the scroll position before opening
-  let lastScrollY = 0;
-
-  function restoreScroll() {
-    window.scrollTo(0, lastScrollY);
-  }
-
-  if (lightbox && lbImg) {
+  if (overlay && lbImg) {
+    // open on tile click
     document.querySelectorAll(".tile").forEach(tile => {
       tile.addEventListener("click", (e) => {
-        // Don't open lightbox when clicking Astrolove "View site"
+        // Don’t open when clicking Astrolove 'View site'
         if (e.target.closest(".cap-link")) return;
 
         const fullSrc = tile.getAttribute("data-full");
         if (!fullSrc) return;
 
-        // remember where the user is
-        lastScrollY = window.scrollY;
-
         lbImg.src = fullSrc;
-        lightbox.showModal();
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";  // lock background scroll
       });
     });
 
-    // click outside dialog to close
-    lightbox.addEventListener("click", (e) => {
-      const rect = lightbox.getBoundingClientRect();
-      const inside =
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom;
-      if (!inside) {
-        lightbox.close();
-        restoreScroll();
+    // close when clicking outside image area
+    overlay.addEventListener("click", (e) => {
+      const inner = e.target.closest(".lb-inner");
+      if (!inner) {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
       }
     });
   }
 
-  // Close button
-  if (lbClose && lightbox) {
-    lbClose.addEventListener("click", () => {
-      lightbox.close();
-      restoreScroll();
+  if (lbClose && overlay) {
+    lbClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      overlay.classList.remove("open");
+      document.body.style.overflow = "";
     });
   }
 
@@ -136,3 +123,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
